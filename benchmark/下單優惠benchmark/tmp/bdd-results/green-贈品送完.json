@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^贈品庫存為0時訂單仍成立但沒有贈品列且應付1575$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": ".....\n\n1 scenario (1 passed)\n5 steps (5 passed)\n0m 0.010s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

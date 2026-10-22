@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-部分退貨重算.feature",
+    "--name",
+    "^退回多餘烏龍後同時失去滿額與免運且退款270$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "....F\n\nFailed scenarios:\n  1) 退回多餘烏龍後同時失去滿額與免運且退款270 # features/下單優惠-部分退貨重算.feature:96\n       而且訂單 \"退貨失去滿額與免運\" 的退貨結算應該是 # features/step_definitions/order_steps.js:262\n         | 剩餘商品應付 | 運費 | 剩餘應付 | 退款  | 待補金額 | 訂單狀態 | 贈品達標 | 券消耗 | 套用       | 未套用                                            | 贈品SKU | 贈品數量 | 贈品列金額 | 追回原價 |\n         | 680    | 80 | 760  | 270 | 0    | 無    | 否    | 否   | B-TEA：70 | T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻 | 無     | 0    | 0     | 0    |\n           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n           + actual - expected\n           \n             {\n               applied: 'B-TEA：70',\n               couponConsumed: '否',\n           +   due: 130,\n           -   due: 0,\n               giftLineAmount: 0,\n               giftQualified: '否',\n               giftQuantity: 0,\n               giftRecoveryPrice: 0,\n               giftSku: '無',\n               goodsPayable: 680,\n               payable: 760,\n           +   refund: 0,\n           -   refund: 270,\n               shipping: 80,\n           +   status: '待補款',\n           -   status: '無',\n               unapplied: 'T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻'\n             }\n           \n               + expected - actual\n           \n                {\n                  \"applied\": \"B-TEA：70\"\n                  \"couponConsumed\": \"否\"\n               -  \"due\": 130\n               +  \"due\": 0\n                  \"giftLineAmount\": 0\n                  \"giftQualified\": \"否\"\n                  \"giftQuantity\": 0\n                  \"giftRecoveryPrice\": 0\n                  \"giftSku\": \"無\"\n                  \"goodsPayable\": 680\n                  \"payable\": 760\n               -  \"refund\": 0\n               +  \"refund\": 270\n                  \"shipping\": 80\n               -  \"status\": \"待補款\"\n               +  \"status\": \"無\"\n                  \"unapplied\": \"T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻\"\n                }\n           \n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:287:10)\n\n1 scenario (1 failed)\n5 steps (4 passed, 1 failed)\n0m 0.035s (0m 0.006s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

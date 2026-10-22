@@ -1,0 +1,56 @@
+{
+  "language": "zh-TW",
+  "scenarios": [
+    {
+      "kind": "scenario",
+      "name": "退回一件烏龍後第N件與滿額同時重排且退款190",
+      "line": 17
+    },
+    {
+      "kind": "scenario",
+      "name": "再退一件烏龍且贈品已退回時退款640",
+      "line": 42
+    },
+    {
+      "kind": "scenario",
+      "name": "再退一件烏龍且贈品未退回時退款240",
+      "line": 67
+    },
+    {
+      "kind": "scenario",
+      "name": "退回多餘烏龍後同時失去滿額與免運且退款270",
+      "line": 96
+    },
+    {
+      "kind": "scenario",
+      "name": "退貨後不可疊加券低於門檻但仍保持已消耗且退款170",
+      "line": 117
+    },
+    {
+      "kind": "scenario",
+      "name": "已消耗的折80券在退貨後仍達門檻時繼續折抵且退款270",
+      "line": 138
+    },
+    {
+      "kind": "scenario",
+      "name": "原本未消耗的運費券在退貨後仍不啟用且退款270",
+      "line": 159
+    },
+    {
+      "kind": "scenario",
+      "name": "檔期結束後退貨仍用凍結的單品特價且退款270",
+      "line": 180
+    },
+    {
+      "kind": "scenario",
+      "name": "兩套組合退回一件紅茶且贈品已退回時退款230",
+      "line": 205
+    },
+    {
+      "kind": "scenario",
+      "name": "兩套組合退回一件紅茶且贈品未退回時進入待補款170",
+      "line": 228
+    }
+  ],
+  "findings": []
+}

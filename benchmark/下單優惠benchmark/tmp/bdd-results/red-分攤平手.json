@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^基礎相同時SKU字典序較小的一件先分到1元$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "..F--\n\nFailed scenarios:\n  1) 基礎相同時SKU字典序較小的一件先分到1元 # features/下單優惠-規則與邊界.feature:640\n       當訂單 \"分攤平手\" 把 1 元折抵分攤到這兩件 # features/step_definitions/order_steps.js:184\n           TypeError: this.orderService.allocate is not a function\n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:186:47)\n\n1 scenario (1 failed)\n5 steps (2 passed, 2 skipped, 1 failed)\n0m 0.010s (0m 0.000s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^不可疊加券改成只折100時與滿額相同並保留滿額$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "...F-\n\nFailed scenarios:\n  1) 不可疊加券改成只折100時與滿額相同並保留滿額 # features/下單優惠-規則與邊界.feature:268\n       那麼訂單 \"券與滿額同額\" 的件明細應該是 # features/step_definitions/order_steps.js:48\n         | SKU   | 件序 | 原價  | 步驟1成交價 | 步驟1活動   | 最終件金額 |\n         | TEA-A | 1  | 500 | 450    | S-TEA-A | 372   |\n         | TEA-A | 2  | 500 | 450    | S-TEA-A | 410   |\n         | TEA-B | 1  | 300 | 300    | 原價      | 248   |\n           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n           + actual - expected\n           \n             [\n               {\n           +     finalAmount: 336,\n           -     finalAmount: 372,\n                 originalPrice: 500,\n                 sequence: 1,\n                 sku: 'TEA-A',\n                 step1Activity: 'S-TEA-A',\n                 step1Price: 450\n               },\n               {\n           +     finalAmount: 370,\n           -     finalAmount: 410,\n                 originalPrice: 500,\n                 sequence: 2,\n                 sku: 'TEA-A',\n                 step1Activity: 'S-TEA-A',\n                 step1Price: 450\n               },\n               {\n           +     finalAmount: 224,\n           -     finalAmount: 248,\n                 originalPrice: 300,\n                 sequence: 1,\n                 sku: 'TEA-B',\n                 step1Activity: '原價',\n                 step1Price: 300\n           \n               + expected - actual\n           \n                [\n                  {\n               -    \"finalAmount\": 336\n               +    \"finalAmount\": 372\n                    \"originalPrice\": 500\n                    \"sequence\": 1\n                    \"sku\": \"TEA-A\"\n                    \"step1Activity\": \"S-TEA-A\"\n                    \"step1Price\": 450\n                  }\n                  {\n               -    \"finalAmount\": 370\n               +    \"finalAmount\": 410\n                    \"originalPrice\": 500\n                    \"sequence\": 2\n                    \"sku\": \"TEA-A\"\n                    \"step1Activity\": \"S-TEA-A\"\n                    \"step1Price\": 450\n                  }\n                  {\n               -    \"finalAmount\": 224\n               +    \"finalAmount\": 248\n                    \"originalPrice\": 300\n                    \"sequence\": 1\n                    \"sku\": \"TEA-B\"\n                    \"step1Activity\": \"原價\"\n           \n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:58:10)\n\n1 scenario (1 failed)\n5 steps (3 passed, 1 skipped, 1 failed)\n0m 0.011s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

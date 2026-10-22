@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-部分退貨重算.feature",
+    "--name",
+    "^退貨後不可疊加券低於門檻但仍保持已消耗且退款170$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "....F\n\nFailed scenarios:\n  1) 退貨後不可疊加券低於門檻但仍保持已消耗且退款170 # features/下單優惠-部分退貨重算.feature:117\n       而且訂單 \"退貨後券失效仍已消耗\" 的退貨結算應該是 # features/step_definitions/order_steps.js:262\n         | 剩餘商品應付 | 運費 | 剩餘應付 | 退款  | 待補金額 | 訂單狀態 | 贈品達標 | 券消耗 | 套用       | 未套用                                                            | 贈品SKU | 贈品數量 | 贈品列金額 | 追回原價 |\n         | 680    | 80 | 760  | 170 | 0    | 無    | 否    | 是   | B-TEA：70 | C-EXCL：適用商品未達門檻、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻 | 無     | 0    | 0     | 0    |\n           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n           + actual - expected\n           \n             {\n               applied: 'B-TEA：70',\n           +   couponConsumed: '否',\n           -   couponConsumed: '是',\n               due: 0,\n               giftLineAmount: 0,\n               giftQualified: '否',\n               giftQuantity: 0,\n               giftRecoveryPrice: 0,\n           \n               + expected - actual\n           \n                {\n                  \"applied\": \"B-TEA：70\"\n               -  \"couponConsumed\": \"否\"\n               +  \"couponConsumed\": \"是\"\n                  \"due\": 0\n                  \"giftLineAmount\": 0\n                  \"giftQualified\": \"否\"\n                  \"giftQuantity\": 0\n           \n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:287:10)\n\n1 scenario (1 failed)\n5 steps (4 passed, 1 failed)\n0m 0.022s (0m 0.004s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

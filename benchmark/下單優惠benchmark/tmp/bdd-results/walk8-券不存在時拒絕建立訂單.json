@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^券不存在時拒絕建立訂單$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "..F-\n\nFailed scenarios:\n  1) 券不存在時拒絕建立訂單 # features/下單優惠-規則與邊界.feature:404\n       當顧客建立訂單 \"券不存在\" # features/step_definitions/order_steps.js:32\n           Error: 尚未實作\n               at assertSupportedCheckout (/Users/ben/Documents/app/ai-bdd/src/order-service.js:406:11)\n               at OrderService.placeOrder (/Users/ben/Documents/app/ai-bdd/src/order-service.js:54:5)\n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:35:49)\n\n1 scenario (1 failed)\n4 steps (2 passed, 1 skipped, 1 failed)\n0m 0.008s (0m 0.000s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

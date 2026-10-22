@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: "{{API_TITLE}}"
+  version: "{{API_VERSION}}"
+  description: "{{API_DESCRIPTION}}"
+servers:
+  - url: "{{SERVER_URL}}"
+    description: "{{SERVER_DESCRIPTION}}"
+tags:
+  - name: "{{TAG_NAME}}"
+    description: "{{TAG_DESCRIPTION}}"
+paths:
+  "{{PATH}}":
+    "{{HTTP_METHOD}}":
+      operationId: "{{OPERATION_ID}}"
+      summary: "{{OPERATION_SUMMARY}}"
+      description: "{{OPERATION_DESCRIPTION}}"
+      tags:
+        - "{{TAG_NAME}}"
+      security:
+        - "{{SECURITY_SCHEME_NAME}}": []
+      parameters:
+        - name: "{{PARAMETER_NAME}}"
+          in: "{{PARAMETER_LOCATION}}"
+          required: {{PARAMETER_REQUIRED}}
+          description: "{{PARAMETER_DESCRIPTION}}"
+          schema:
+            type: "{{PARAMETER_TYPE}}"
+      requestBody:
+        required: {{REQUEST_BODY_REQUIRED}}
+        description: "{{REQUEST_BODY_DESCRIPTION}}"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/{{REQUEST_SCHEMA_NAME}}"
+      responses:
+        "{{SUCCESS_STATUS_CODE}}":
+          description: "{{SUCCESS_RESPONSE_DESCRIPTION}}"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/{{SUCCESS_SCHEMA_NAME}}"
+        "{{ERROR_STATUS_CODE}}":
+          description: "{{ERROR_RESPONSE_DESCRIPTION}}"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/{{ERROR_SCHEMA_NAME}}"
+components:
+  securitySchemes:
+    "{{SECURITY_SCHEME_NAME}}":
+      type: http
+      scheme: bearer
+      description: "{{SECURITY_SCHEME_DESCRIPTION}}"
+  schemas:
+    "{{REQUEST_SCHEMA_NAME}}":
+      type: object
+      description: "{{REQUEST_SCHEMA_DESCRIPTION}}"
+      required:
+        - "{{REQUEST_REQUIRED_PROPERTY}}"
+      properties:
+        "{{REQUEST_REQUIRED_PROPERTY}}":
+          type: "{{REQUEST_PROPERTY_TYPE}}"
+          description: "{{REQUEST_PROPERTY_DESCRIPTION}}"
+    "{{SUCCESS_SCHEMA_NAME}}":
+      type: object
+      description: "{{SUCCESS_SCHEMA_DESCRIPTION}}"
+      required:
+        - "{{SUCCESS_REQUIRED_PROPERTY}}"
+      properties:
+        "{{SUCCESS_REQUIRED_PROPERTY}}":
+          type: "{{SUCCESS_PROPERTY_TYPE}}"
+          description: "{{SUCCESS_PROPERTY_DESCRIPTION}}"
+    "{{ERROR_SCHEMA_NAME}}":
+      type: object
+      description: "{{ERROR_SCHEMA_DESCRIPTION}}"
+      required:
+        - "{{ERROR_REQUIRED_PROPERTY}}"
+      properties:
+        "{{ERROR_REQUIRED_PROPERTY}}":
+          type: "{{ERROR_PROPERTY_TYPE}}"
+          description: "{{ERROR_PROPERTY_DESCRIPTION}}"

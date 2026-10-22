@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^下單之後改價換檔不回溯已凍結的成交價與應付$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": ".F--\n\nFailed scenarios:\n  1) 下單之後改價換檔不回溯已凍結的成交價與應付 # features/下單優惠-規則與邊界.feature:674\n       當商品改價且活動換檔後讀取訂單 \"凍結烏龍\" # features/step_definitions/order_steps.js:217\n           TypeError: this.orderService.readOrder is not a function\n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:219:47)\n\n1 scenario (1 failed)\n4 steps (1 passed, 2 skipped, 1 failed)\n0m 0.010s (0m 0.000s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

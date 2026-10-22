@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^兩件陶杯達門檻時排除特價券折50且應付750$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "..F--\n\nFailed scenarios:\n  1) 兩件陶杯達門檻時排除特價券折50且應付750 # features/下單優惠-規則與邊界.feature:348\n       當顧客建立訂單 \"排除特價達檻\" # features/step_definitions/order_steps.js:32\n           Error: 尚未實作\n               at applyStackableCoupon (/Users/ben/Documents/app/ai-bdd/src/order-service.js:333:13)\n               at OrderService.placeOrder (/Users/ben/Documents/app/ai-bdd/src/order-service.js:76:16)\n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:35:49)\n\n1 scenario (1 failed)\n5 steps (2 passed, 2 skipped, 1 failed)\n0m 0.009s (0m 0.000s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^可折商品953元且顧客有1000點時只折190點$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": "....\n\n1 scenario (1 passed)\n4 steps (4 passed)\n0m 0.009s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

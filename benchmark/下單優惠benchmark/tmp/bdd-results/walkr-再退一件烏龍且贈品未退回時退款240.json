@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-部分退貨重算.feature",
+    "--name",
+    "^再退一件烏龍且贈品未退回時退款240$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": ".....\n\n1 scenario (1 passed)\n5 steps (5 passed)\n0m 0.024s (0m 0.003s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

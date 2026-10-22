@@ -1,0 +1,29 @@
+Project photo_album {
+  database_type: 'MySQL'
+  Note: '保存相簿 metadata、照片 metadata 與排序狀態。'
+}
+
+Table albums {
+  id varchar [pk, not null, note: '相簿識別碼。']
+  name varchar [not null, note: '使用者看到的相簿名稱。']
+  created_at timestamp [not null, note: '相簿建立時間。']
+
+  indexes {
+    (name) [name: 'albums_name_unique', unique, note: '同一名稱只能對應一個相簿。']
+  }
+
+  Note: '相簿 metadata。'
+}
+
+Table photos {
+  id varchar [pk, not null, note: '照片識別碼。']
+  album_id varchar [not null, ref: > albums.id, note: '照片所屬的相簿。']
+  file_name varchar [not null, note: '原始照片檔名。']
+  sort_order int [not null, note: '相簿內的排序位置。']
+
+  indexes {
+    (album_id, sort_order) [name: 'photos_album_sort_unique', unique, note: '同一相簿的排序位置不可重複。']
+  }
+
+  Note: '照片 metadata 與排序狀態。'
+}

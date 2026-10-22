@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^基礎相同時SKU字典序較小的一件先分到1元$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "UUUUU\n\nUndefined scenarios:\n  1) 基礎相同時SKU字典序較小的一件先分到1元 # features/下單優惠-規則與邊界.feature:640\n       假設訂單 \"分攤平手\" 的 \"MUG-C\" 件序 1 分攤前金額是 100\n       而且訂單 \"分攤平手\" 的 \"TEA-B\" 件序 1 分攤前金額是 100\n       當訂單 \"分攤平手\" 把 1 元折抵分攤到這兩件\n       那麼訂單 \"分攤平手\" 的 \"MUG-C\" 件序 1 應該分到折抵 1\n       而且訂單 \"分攤平手\" 的 \"TEA-B\" 件序 1 應該分到折抵 0\n\n1 scenario (1 undefined)\n5 steps (5 undefined)\n0m 0.004s (0m 0.000s executing your code)\n\nYou can implement missing steps with the snippets below:\n\nGiven('訂單 {string} 的 {string} 件序 {int} 分攤前金額是 {int}', function (string, string2, int, int2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 的 {string} 件序 {int} 分攤前金額是 {float}', function (string, string2, int, float) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 的 {string} 件序 {float} 分攤前金額是 {int}', function (string, string2, float, int) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 的 {string} 件序 {float} 分攤前金額是 {float}', function (string, string2, float, float2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nWhen('訂單 {string} 把 {int} 元折抵分攤到這兩件', function (string, int) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nWhen('訂單 {string} 把 {float} 元折抵分攤到這兩件', function (string, float) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nThen('訂單 {string} 的 {string} 件序 {int} 應該分到折抵 {int}', function (string, string2, int, int2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nThen('訂單 {string} 的 {string} 件序 {int} 應該分到折抵 {float}', function (string, string2, int, float) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nThen('訂單 {string} 的 {string} 件序 {float} 應該分到折抵 {int}', function (string, string2, float, int) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nThen('訂單 {string} 的 {string} 件序 {float} 應該分到折抵 {float}', function (string, string2, float, float2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\n",
+  "stderr": "",
+  "timedOut": false
+}

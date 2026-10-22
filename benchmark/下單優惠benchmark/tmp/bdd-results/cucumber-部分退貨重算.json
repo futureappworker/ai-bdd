@@ -1,0 +1,2447 @@
+[
+  {
+    "description": "  訂單已經用本檔期規則成立之後，退回部分購買件。重算從步驟 1 走到贈品判斷，件序不重新編號。\n\n  退款等於原應付減去剩餘應付。贈品達標失敗且贈品未退回時，再減追回原價 400。\n\n  減完小於 0 時，退款是 0，訂單狀態是待補款，待補金額是差額絕對值。否則待補金額是 0，訂單狀態寫無，代表沒有進入待補款。\n\n  結算表省略贈品列時，代表規格沒有寫那一列還在不在，場景不鎖定它。",
+    "elements": [
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後重算第n件與滿額;退回一件烏龍後第n件與滿額同時重排且退款190",
+        "keyword": "場景",
+        "line": 17,
+        "name": "退回一件烏龍後第N件與滿額同時重排且退款190",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2456000
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1575",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 18,
+            "name": "訂單 \"退貨重排第N件\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 103666
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 21,
+            "name": "訂單 \"退貨重排第N件\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 2117250
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 28,
+            "name": "顧客對訂單 \"退貨重排第N件\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1754416
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "419"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "420"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "210"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "336"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 31,
+            "name": "訂單 \"退貨重排第N件\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 442709
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "1385",
+                      "0",
+                      "1385",
+                      "190",
+                      "0",
+                      "無",
+                      "是",
+                      "否",
+                      "N-TEA：225、T-CASH：100、F-999：80、G-1200：0",
+                      "T-FOOD：未達門檻",
+                      "MUG-C",
+                      "1",
+                      "0",
+                      "400"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 37,
+            "name": "訂單 \"退貨重排第N件\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後重算第n件與滿額;再退一件烏龍且贈品已退回時退款640",
+        "keyword": "場景",
+        "line": 42,
+        "name": "再退一件烏龍且贈品已退回時退款640",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 243250
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1575",
+                      "是",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 43,
+            "name": "訂單 \"贈品達標失敗且已退回\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 121915
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 46,
+            "name": "訂單 \"贈品達標失敗且已退回\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 332667
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 53,
+            "name": "顧客對訂單 \"贈品達標失敗且已退回\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 611416
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "406"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "204"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "325"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 57,
+            "name": "訂單 \"贈品達標失敗且已退回\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1162084
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "935",
+                      "0",
+                      "935",
+                      "640",
+                      "0",
+                      "無",
+                      "否",
+                      "否",
+                      "N-TEA：225、T-CASH：100、F-999：80",
+                      "T-FOOD：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 62,
+            "name": "訂單 \"贈品達標失敗且已退回\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後重算第n件與滿額;再退一件烏龍且贈品未退回時退款240",
+        "keyword": "場景",
+        "line": 67,
+        "name": "再退一件烏龍且贈品未退回時退款240",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 94249
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1575",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 68,
+            "name": "訂單 \"贈品達標失敗且未退回\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 51249
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 71,
+            "name": "訂單 \"贈品達標失敗且未退回\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 471000
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 78,
+            "name": "顧客對訂單 \"贈品達標失敗且未退回\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 193542
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "406"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "204"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "325"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 82,
+            "name": "訂單 \"贈品達標失敗且未退回\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 145333
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "935",
+                      "0",
+                      "935",
+                      "240",
+                      "0",
+                      "無",
+                      "否",
+                      "否",
+                      "N-TEA：225、T-CASH：100、F-999：80",
+                      "T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 87,
+            "name": "訂單 \"贈品達標失敗且未退回\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後失去滿額、免運或券;退回多餘烏龍後同時失去滿額與免運且退款270",
+        "keyword": "場景",
+        "line": 96,
+        "name": "退回多餘烏龍後同時失去滿額與免運且退款270",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 502791
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1030",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 97,
+            "name": "訂單 \"退貨失去滿額與免運\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 130374
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 100,
+            "name": "訂單 \"退貨失去滿額與免運\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 610832
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 105,
+            "name": "顧客對訂單 \"退貨失去滿額與免運\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 90416
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "408"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 108,
+            "name": "訂單 \"退貨失去滿額與免運\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 164916
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "680",
+                      "80",
+                      "760",
+                      "270",
+                      "0",
+                      "無",
+                      "否",
+                      "否",
+                      "B-TEA：70",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 112,
+            "name": "訂單 \"退貨失去滿額與免運\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後失去滿額、免運或券;退貨後不可疊加券低於門檻但仍保持已消耗且退款170",
+        "keyword": "場景",
+        "line": 117,
+        "name": "退貨後不可疊加券低於門檻但仍保持已消耗且退款170",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 88666
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-EXCL",
+                      "是",
+                      "930",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 118,
+            "name": "訂單 \"退貨後券失效仍已消耗\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 37040
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 121,
+            "name": "訂單 \"退貨後券失效仍已消耗\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 424292
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 126,
+            "name": "顧客對訂單 \"退貨後券失效仍已消耗\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 31124
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "408"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 129,
+            "name": "訂單 \"退貨後券失效仍已消耗\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 206208
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "680",
+                      "80",
+                      "760",
+                      "170",
+                      "0",
+                      "無",
+                      "否",
+                      "是",
+                      "B-TEA：70",
+                      "C-EXCL：適用商品未達門檻、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 133,
+            "name": "訂單 \"退貨後券失效仍已消耗\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後失去滿額、免運或券;已消耗的折80券在退貨後仍達門檻時繼續折抵且退款270",
+        "keyword": "場景",
+        "line": 138,
+        "name": "已消耗的折80券在退貨後仍達門檻時繼續折抵且退款270",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 30708
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-80",
+                      "是",
+                      "950",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 139,
+            "name": "訂單 \"退貨時折現券仍達門檻\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 21832
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 142,
+            "name": "訂單 \"退貨時折現券仍達門檻\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 431624
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 147,
+            "name": "顧客對訂單 \"退貨時折現券仍達門檻\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 219499
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "360"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "240"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 150,
+            "name": "訂單 \"退貨時折現券仍達門檻\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 189417
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "600",
+                      "80",
+                      "680",
+                      "270",
+                      "0",
+                      "無",
+                      "否",
+                      "是",
+                      "B-TEA：70、C-80：80",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 154,
+            "name": "訂單 \"退貨時折現券仍達門檻\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後失去滿額、免運或券;原本未消耗的運費券在退貨後仍不啟用且退款270",
+        "keyword": "場景",
+        "line": 159,
+        "name": "原本未消耗的運費券在退貨後仍不啟用且退款270",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 46375
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-SHIP50",
+                      "否",
+                      "1030",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 160,
+            "name": "訂單 \"退貨後未消耗的運費券不啟用\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 24584
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 163,
+            "name": "訂單 \"退貨後未消耗的運費券不啟用\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 204582
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 168,
+            "name": "顧客對訂單 \"退貨後未消耗的運費券不啟用\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 60833
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "408"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 171,
+            "name": "訂單 \"退貨後未消耗的運費券不啟用\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "680",
+                      "80",
+                      "760",
+                      "270",
+                      "0",
+                      "無",
+                      "否",
+                      "否",
+                      "B-TEA：70",
+                      "C-SHIP50、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 175,
+            "name": "訂單 \"退貨後未消耗的運費券不啟用\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;退貨後失去滿額、免運或券;檔期結束後退貨仍用凍結的單品特價且退款270",
+        "keyword": "場景",
+        "line": 180,
+        "name": "檔期結束後退貨仍用凍結的單品特價且退款270",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 86958
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1030",
+                      "否",
+                      "2026-11-02 10:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 181,
+            "name": "訂單 \"檔期結束後退貨\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 77959
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 184,
+            "name": "訂單 \"檔期結束後退貨\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 76041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 189,
+            "name": "顧客對訂單 \"檔期結束後退貨\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 64082
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "408"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 192,
+            "name": "訂單 \"檔期結束後退貨\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 61165
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "680",
+                      "80",
+                      "760",
+                      "270",
+                      "0",
+                      "無",
+                      "否",
+                      "否",
+                      "B-TEA：70",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 196,
+            "name": "訂單 \"檔期結束後退貨\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;贈品追回造成待補款;兩套組合退回一件紅茶且贈品已退回時退款230",
+        "keyword": "場景",
+        "line": 205,
+        "name": "兩套組合退回一件紅茶且贈品已退回時退款230",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 62791
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1260",
+                      "是",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 206,
+            "name": "訂單 \"兩套退一件且贈品已退回\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 301250
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 209,
+            "name": "訂單 \"兩套退一件且贈品已退回\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 545917
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 215,
+            "name": "顧客對訂單 \"兩套退一件且贈品已退回\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 275375
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "372"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "410"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "248"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 218,
+            "name": "訂單 \"兩套退一件且贈品已退回\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 50124
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "1030",
+                      "0",
+                      "1030",
+                      "230",
+                      "0",
+                      "無",
+                      "否",
+                      "否",
+                      "B-TEA：70、T-CASH：100、F-999：80",
+                      "T-FOOD：未達門檻、G-1200：未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 223,
+            "name": "訂單 \"兩套退一件且贈品已退回\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "部分退貨重算下單時凍結的優惠;贈品追回造成待補款;兩套組合退回一件紅茶且贈品未退回時進入待補款170",
+        "keyword": "場景",
+        "line": 228,
+        "name": "兩套組合退回一件紅茶且贈品未退回時進入待補款170",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 75166
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "券已消耗",
+                      "原應付",
+                      "贈品已退回",
+                      "退貨時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "否",
+                      "1260",
+                      "否",
+                      "2026-10-20 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 229,
+            "name": "訂單 \"兩套退一件待補款\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 87541
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 232,
+            "name": "訂單 \"兩套退一件待補款\" 退貨前的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:233"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 250917
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "當",
+            "line": 238,
+            "name": "顧客對訂單 \"兩套退一件待補款\" 退回這些件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:240"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 34041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "372"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "410"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "248"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 241,
+            "name": "訂單 \"兩套退一件待補款\" 的剩餘件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:249"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 30582
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "剩餘商品應付",
+                      "運費",
+                      "剩餘應付",
+                      "退款",
+                      "待補金額",
+                      "訂單狀態",
+                      "贈品達標",
+                      "券消耗",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "1030",
+                      "0",
+                      "1030",
+                      "0",
+                      "170",
+                      "待補款",
+                      "否",
+                      "否",
+                      "B-TEA：70、T-CASH：100、F-999：80",
+                      "T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 246,
+            "name": "訂單 \"兩套退一件待補款\" 的退貨結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:262"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "部分退貨重算下單時凍結的優惠",
+    "line": 2,
+    "keyword": "功能",
+    "name": "部分退貨重算下單時凍結的優惠",
+    "tags": [],
+    "uri": "features/下單優惠-部分退貨重算.feature"
+  }
+]

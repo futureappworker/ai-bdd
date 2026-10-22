@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^付款時間晚於檔期結束仍用建立訂單時的特價且應付530$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": ".....\n\n1 scenario (1 passed)\n5 steps (5 passed)\n0m 0.009s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

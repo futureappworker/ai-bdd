@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^折現券之後再折點數仍維持免運且應付760$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": ".....\n\n1 scenario (1 passed)\n5 steps (5 passed)\n0m 0.009s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

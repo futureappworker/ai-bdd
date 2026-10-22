@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^下單之後改價換檔不回溯已凍結的成交價與應付$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": "....\n\n1 scenario (1 passed)\n4 steps (4 passed)\n0m 0.010s (0m 0.000s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

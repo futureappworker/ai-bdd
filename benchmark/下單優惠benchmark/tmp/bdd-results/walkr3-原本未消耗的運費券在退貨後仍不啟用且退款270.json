@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-部分退貨重算.feature",
+    "--name",
+    "^原本未消耗的運費券在退貨後仍不啟用且退款270$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "....F\n\nFailed scenarios:\n  1) 原本未消耗的運費券在退貨後仍不啟用且退款270 # features/下單優惠-部分退貨重算.feature:159\n       而且訂單 \"退貨後未消耗的運費券不啟用\" 的退貨結算應該是 # features/step_definitions/order_steps.js:262\n         | 剩餘商品應付 | 運費 | 剩餘應付 | 退款  | 待補金額 | 訂單狀態 | 贈品達標 | 券消耗 | 套用       | 未套用                                                     | 贈品SKU | 贈品數量 | 贈品列金額 | 追回原價 |\n         | 680    | 80 | 760  | 270 | 0    | 無    | 否    | 否   | B-TEA：70 | C-SHIP50、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻 | 無     | 0    | 0     | 0    |\n           AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n           + actual - expected\n           ... Skipped lines\n           \n             {\n               applied: 'B-TEA：70',\n               couponConsumed: '否',\n               due: 0,\n               giftLineAmount: 0,\n           ...\n               status: '無',\n           +   unapplied: 'T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻'\n           -   unapplied: 'C-SHIP50、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻'\n             }\n           \n               + expected - actual\n           \n                  \"payable\": 760\n                  \"refund\": 270\n                  \"shipping\": 80\n                  \"status\": \"無\"\n               -  \"unapplied\": \"T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻\"\n               +  \"unapplied\": \"C-SHIP50、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻\"\n                }\n           \n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:287:10)\n\n1 scenario (1 failed)\n5 steps (4 passed, 1 failed)\n0m 0.020s (0m 0.004s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--name",
+    "^可計入金額剛好2000時滿額折現只取最高階250$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "UU-U\n\nUndefined scenarios:\n  1) 可計入金額剛好2000時滿額折現只取最高階250 # features/下單優惠-規則與邊界.feature:195\n       假設訂單 \"剛好兩千\" 在步驟 2 的可計入金額是 2000\n       而且訂單 \"剛好兩千\" 只有 \"T-CASH\" 達標\n       那麼訂單 \"剛好兩千\" 的 \"T-CASH\" 折抵應該是 250\n\n1 scenario (1 undefined)\n4 steps (1 skipped, 3 undefined)\n0m 0.006s (0m 0.000s executing your code)\n\nYou can implement missing steps with the snippets below:\n\nGiven('訂單 {string} 在步驟 {int} 的可計入金額是 {int}', function (string, int, int2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 在步驟 {int} 的可計入金額是 {float}', function (string, int, float) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 在步驟 {float} 的可計入金額是 {int}', function (string, float, int) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 在步驟 {float} 的可計入金額是 {float}', function (string, float, float2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nGiven('訂單 {string} 只有 {string} 達標', function (string, string2) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nThen('訂單 {string} 的 {string} 折抵應該是 {int}', function (string, string2, int) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\nThen('訂單 {string} 的 {string} 折抵應該是 {float}', function (string, string2, float) {\n  // Write code here that turns the phrase above into concrete actions\n  return 'pending';\n});\n\n",
+  "stderr": "",
+  "timedOut": false
+}

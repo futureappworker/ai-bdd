@@ -1,0 +1,200 @@
+{
+  "version": "2.21",
+  "themes": {
+    "mode": ["light", "dark"]
+  },
+  "variables": {
+    "{{SURFACE_COLOR_VARIABLE}}": {
+      "type": "color",
+      "value": [
+        {
+          "value": "{{LIGHT_SURFACE_COLOR}}",
+          "theme": { "mode": "light" }
+        },
+        {
+          "value": "{{DARK_SURFACE_COLOR}}",
+          "theme": { "mode": "dark" }
+        }
+      ]
+    },
+    "{{TEXT_COLOR_VARIABLE}}": {
+      "type": "color",
+      "value": [
+        {
+          "value": "{{LIGHT_TEXT_COLOR}}",
+          "theme": { "mode": "light" }
+        },
+        {
+          "value": "{{DARK_TEXT_COLOR}}",
+          "theme": { "mode": "dark" }
+        }
+      ]
+    },
+    "{{ACTION_COLOR_VARIABLE}}": {
+      "type": "color",
+      "value": "{{ACTION_COLOR}}"
+    },
+    "{{ACTION_LABEL_COLOR_VARIABLE}}": {
+      "type": "color",
+      "value": "{{ACTION_LABEL_COLOR}}"
+    },
+    "{{DANGER_COLOR_VARIABLE}}": {
+      "type": "color",
+      "value": "{{DANGER_COLOR}}"
+    }
+  },
+  "children": [
+    {
+      "id": "{{PRIMARY_SCREEN_ID}}",
+      "type": "frame",
+      "name": "{{PRIMARY_SCREEN_NAME}}",
+      "x": {{PRIMARY_SCREEN_X}},
+      "y": {{PRIMARY_SCREEN_Y}},
+      "width": {{PRIMARY_SCREEN_WIDTH}},
+      "height": {{PRIMARY_SCREEN_HEIGHT}},
+      "fill": "${{SURFACE_COLOR_VARIABLE}}",
+      "layout": "vertical",
+      "gap": {{SCREEN_GAP}},
+      "padding": {{SCREEN_PADDING}},
+      "children": [
+        {
+          "id": "{{PRIMARY_STATE_TEXT_ID}}",
+          "type": "text",
+          "name": "{{PRIMARY_STATE_TEXT_NAME}}",
+          "content": "{{PRIMARY_STATE_TEXT}}",
+          "fill": "${{TEXT_COLOR_VARIABLE}}",
+          "fontFamily": "{{FONT_FAMILY}}",
+          "fontSize": {{STATE_FONT_SIZE}},
+          "fontWeight": "{{STATE_FONT_WEIGHT}}",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "{{PRIMARY_TITLE_TEXT_ID}}",
+          "type": "text",
+          "name": "{{PRIMARY_TITLE_TEXT_NAME}}",
+          "content": "{{PRIMARY_TITLE_TEXT}}",
+          "fill": "${{TEXT_COLOR_VARIABLE}}",
+          "fontFamily": "{{FONT_FAMILY}}",
+          "fontSize": {{TITLE_FONT_SIZE}},
+          "fontWeight": "{{TITLE_FONT_WEIGHT}}",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "{{PRIMARY_BODY_TEXT_ID}}",
+          "type": "text",
+          "name": "{{PRIMARY_BODY_TEXT_NAME}}",
+          "content": "{{PRIMARY_BODY_TEXT}}",
+          "fill": "${{TEXT_COLOR_VARIABLE}}",
+          "fontFamily": "{{FONT_FAMILY}}",
+          "fontSize": {{BODY_FONT_SIZE}},
+          "fontWeight": "{{BODY_FONT_WEIGHT}}",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "{{PRIMARY_ACTION_ID}}",
+          "type": "frame",
+          "name": "{{PRIMARY_ACTION_NAME}}",
+          "width": "fill_container",
+          "height": {{ACTION_HEIGHT}},
+          "fill": "${{ACTION_COLOR_VARIABLE}}",
+          "cornerRadius": {{ACTION_CORNER_RADIUS}},
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "{{PRIMARY_ACTION_LABEL_ID}}",
+              "type": "text",
+              "name": "{{PRIMARY_ACTION_LABEL_NAME}}",
+              "content": "{{PRIMARY_ACTION_LABEL}}",
+              "fill": "${{ACTION_LABEL_COLOR_VARIABLE}}",
+              "fontFamily": "{{FONT_FAMILY}}",
+              "fontSize": {{ACTION_FONT_SIZE}},
+              "fontWeight": "{{ACTION_FONT_WEIGHT}}",
+              "textGrowth": "auto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "{{ERROR_SCREEN_ID}}",
+      "type": "frame",
+      "name": "{{ERROR_SCREEN_NAME}}",
+      "x": {{ERROR_SCREEN_X}},
+      "y": {{ERROR_SCREEN_Y}},
+      "width": {{ERROR_SCREEN_WIDTH}},
+      "height": {{ERROR_SCREEN_HEIGHT}},
+      "fill": "${{SURFACE_COLOR_VARIABLE}}",
+      "layout": "vertical",
+      "gap": {{SCREEN_GAP}},
+      "padding": {{SCREEN_PADDING}},
+      "children": [
+        {
+          "id": "{{ERROR_STATE_TEXT_ID}}",
+          "type": "text",
+          "name": "{{ERROR_STATE_TEXT_NAME}}",
+          "content": "{{ERROR_STATE_TEXT}}",
+          "fill": "${{DANGER_COLOR_VARIABLE}}",
+          "fontFamily": "{{FONT_FAMILY}}",
+          "fontSize": {{STATE_FONT_SIZE}},
+          "fontWeight": "{{STATE_FONT_WEIGHT}}",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "{{ERROR_TITLE_TEXT_ID}}",
+          "type": "text",
+          "name": "{{ERROR_TITLE_TEXT_NAME}}",
+          "content": "{{ERROR_TITLE_TEXT}}",
+          "fill": "${{TEXT_COLOR_VARIABLE}}",
+          "fontFamily": "{{FONT_FAMILY}}",
+          "fontSize": {{TITLE_FONT_SIZE}},
+          "fontWeight": "{{TITLE_FONT_WEIGHT}}",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "{{ERROR_BODY_TEXT_ID}}",
+          "type": "text",
+          "name": "{{ERROR_BODY_TEXT_NAME}}",
+          "content": "{{ERROR_BODY_TEXT}}",
+          "fill": "${{TEXT_COLOR_VARIABLE}}",
+          "fontFamily": "{{FONT_FAMILY}}",
+          "fontSize": {{BODY_FONT_SIZE}},
+          "fontWeight": "{{BODY_FONT_WEIGHT}}",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "{{ERROR_ACTION_ID}}",
+          "type": "frame",
+          "name": "{{ERROR_ACTION_NAME}}",
+          "width": "fill_container",
+          "height": {{ACTION_HEIGHT}},
+          "fill": "${{ACTION_COLOR_VARIABLE}}",
+          "cornerRadius": {{ACTION_CORNER_RADIUS}},
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "{{ERROR_ACTION_LABEL_ID}}",
+              "type": "text",
+              "name": "{{ERROR_ACTION_LABEL_NAME}}",
+              "content": "{{ERROR_ACTION_LABEL}}",
+              "fill": "${{ACTION_LABEL_COLOR_VARIABLE}}",
+              "fontFamily": "{{FONT_FAMILY}}",
+              "fontSize": {{ACTION_FONT_SIZE}},
+              "fontWeight": "{{ACTION_FONT_WEIGHT}}",
+              "textGrowth": "auto"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

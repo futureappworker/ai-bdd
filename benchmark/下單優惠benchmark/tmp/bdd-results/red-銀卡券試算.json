@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-驗算成交金額.feature",
+    "--name",
+    "^金卡提交銀卡券時試算仍維持無券的應付530$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "..F--\n\nFailed scenarios:\n  1) 金卡提交銀卡券時試算仍維持無券的應付530 # features/下單優惠-驗算成交金額.feature:259\n       當顧客試算訂單 \"銀卡券試算\" # features/step_definitions/order_steps.js:41\n           TypeError: this.orderService.quote is not a function\n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:43:47)\n\n1 scenario (1 failed)\n5 steps (2 passed, 2 skipped, 1 failed)\n0m 0.008s (0m 0.000s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

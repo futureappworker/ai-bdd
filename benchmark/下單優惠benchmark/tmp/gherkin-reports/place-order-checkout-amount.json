@@ -1,0 +1,96 @@
+{
+  "language": "zh-TW",
+  "scenarios": [
+    {
+      "kind": "scenario",
+      "name": "金卡買一件高山烏龍時單品特價勝出且應付530",
+      "line": 21
+    },
+    {
+      "kind": "scenario",
+      "name": "金卡買一件陶杯時家居折扣勝出且應付440",
+      "line": 37
+    },
+    {
+      "kind": "scenario",
+      "name": "烏龍與紅茶各一件組成組合價且應付760",
+      "line": 57
+    },
+    {
+      "kind": "scenario",
+      "name": "組合後剩下一件再進滿額並免運且應付1030",
+      "line": 75
+    },
+    {
+      "kind": "scenario",
+      "name": "家居幫忙達檻時食品打折勝出並送贈品且應付1575",
+      "line": 95
+    },
+    {
+      "kind": "scenario",
+      "name": "滿額之後再疊加折80券且應付950",
+      "line": 123
+    },
+    {
+      "kind": "scenario",
+      "name": "不可疊加券比滿額更便宜時採用券且應付930",
+      "line": 143
+    },
+    {
+      "kind": "scenario",
+      "name": "排除特價品後折價券未達門檻且應付890",
+      "line": 163
+    },
+    {
+      "kind": "scenario",
+      "name": "同一張排除特價券放到組合訂單仍未達門檻且應付760",
+      "line": 181
+    },
+    {
+      "kind": "scenario",
+      "name": "訂單已經免運時運費券不消耗且應付1030",
+      "line": 199
+    },
+    {
+      "kind": "scenario",
+      "name": "未滿免運時運費券把宅配折到30且應付710",
+      "line": 219
+    },
+    {
+      "kind": "scenario",
+      "name": "金卡提交銀卡券時拒絕建立訂單",
+      "line": 237
+    },
+    {
+      "kind": "scenario",
+      "name": "一般會員提交銀卡券時拒絕建立訂單",
+      "line": 248
+    },
+    {
+      "kind": "scenario",
+      "name": "金卡提交銀卡券時試算仍維持無券的應付530",
+      "line": 259
+    },
+    {
+      "kind": "scenario",
+      "name": "禮品卡不幫忙達檻且點數只折茶葉且應付1440",
+      "line": 279
+    },
+    {
+      "kind": "outline",
+      "name": "檔期起迄決定高山烏龍的成交價與應付",
+      "line": 300
+    },
+    {
+      "kind": "scenario",
+      "name": "App結帳不會製造免運且應付730",
+      "line": 325
+    },
+    {
+      "kind": "scenario",
+      "name": "網頁信用卡結帳折商品30且應付730",
+      "line": 343
+    }
+  ],
+  "findings": []
+}

@@ -1,0 +1,7108 @@
+[
+  {
+    "description": "  這些場景仍是建立訂單，用來鎖住規格裡一次只改一個條件的規則，以及驗算情境沒有單獨寫出的邊界。\n\n  結帳表的附加欄位，是該場景相對本檔期清單改掉的那一個條件。\n\n  每種商品 11 件以內，可計入金額湊不出剛好 999、1000、1500 或 2000。剛好 2000 沿用規格演練的條件。剛好 1200 用五件紅茶。\n\n  套用與未套用的寫法，與成交金額那份 feature 相同。",
+    "elements": [
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;同價與檔期外的單品價;單品特價與分類折扣同價時命中單品特價",
+        "keyword": "場景",
+        "line": 17,
+        "name": "單品特價與分類折扣同價時命中單品特價",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1293290
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存",
+                      "附加單品特價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有",
+                      "MUG-C是360"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 18,
+            "name": "訂單 \"同價優先\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 370082
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 21,
+            "name": "訂單 \"同價優先\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1797124
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 24,
+            "name": "顧客建立訂單 \"同價優先\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1103582
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "單品特價",
+                      "360"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 25,
+            "name": "訂單 \"同價優先\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 313708
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "360",
+                      "440",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 28,
+            "name": "訂單 \"同價優先\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;同價與檔期外的單品價;一般會員買一件陶杯時家居九折勝出且應付440",
+        "keyword": "場景",
+        "line": 33,
+        "name": "一般會員買一件陶杯時家居九折勝出且應付440",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 176208
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 34,
+            "name": "訂單 \"一般陶杯\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 382042
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 37,
+            "name": "訂單 \"一般陶杯\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 155333
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 40,
+            "name": "顧客建立訂單 \"一般陶杯\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 537125
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "360"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 41,
+            "name": "訂單 \"一般陶杯\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 600667
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "360",
+                      "440",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 44,
+            "name": "訂單 \"一般陶杯\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;同價與檔期外的單品價;銀卡買一件紅茶時沒有會員價且應付380",
+        "keyword": "場景",
+        "line": 49,
+        "name": "銀卡買一件紅茶時沒有會員價且應付380",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 53416
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "銀卡",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 50,
+            "name": "訂單 \"銀卡無會員價\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 110125
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 53,
+            "name": "訂單 \"銀卡無會員價\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 211707
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 56,
+            "name": "顧客建立訂單 \"銀卡無會員價\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 124624
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "300"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 57,
+            "name": "訂單 \"銀卡無會員價\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 60749
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "300",
+                      "380",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 60,
+            "name": "訂單 \"銀卡無會員價\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;同價與檔期外的單品價;檔期結束後陶杯不再走家居折扣且應付480",
+        "keyword": "場景",
+        "line": 65,
+        "name": "檔期結束後陶杯不再走家居折扣且應付480",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 172708
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-11-01 00:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 66,
+            "name": "訂單 \"檔期外陶杯\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 70500
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 69,
+            "name": "訂單 \"檔期外陶杯\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 120584
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 72,
+            "name": "顧客建立訂單 \"檔期外陶杯\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 32082
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "400",
+                      "原價",
+                      "400"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 73,
+            "name": "訂單 \"檔期外陶杯\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 291000
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "400",
+                      "480",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "無"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 76,
+            "name": "訂單 \"檔期外陶杯\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;同價與檔期外的單品價;檔期結束後金卡買高山烏龍不再使用會員價且應付580",
+        "keyword": "場景",
+        "line": 81,
+        "name": "檔期結束後金卡買高山烏龍不再使用會員價且應付580",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 55416
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "金卡",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-11-01 00:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 82,
+            "name": "訂單 \"檔期外金卡\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 34125
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 85,
+            "name": "訂單 \"檔期外金卡\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 66291
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 88,
+            "name": "顧客建立訂單 \"檔期外金卡\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 36041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "500",
+                      "原價",
+                      "500"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 89,
+            "name": "訂單 \"檔期外金卡\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 28915
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "500",
+                      "580",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "無"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 92,
+            "name": "訂單 \"檔期外金卡\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;同價與檔期外的單品價;付款時間晚於檔期結束仍用建立訂單時的特價且應付530",
+        "keyword": "場景",
+        "line": 97,
+        "name": "付款時間晚於檔期結束仍用建立訂單時的特價且應付530",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 25167
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存",
+                      "付款時間"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-31 23:59:59",
+                      "0",
+                      "無",
+                      "有",
+                      "2026-11-01 12:00:00"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 98,
+            "name": "訂單 \"付款晚於結束\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 82666
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 101,
+            "name": "訂單 \"付款晚於結束\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 48583
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 104,
+            "name": "顧客建立訂單 \"付款晚於結束\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 49583
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "450"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 105,
+            "name": "訂單 \"付款晚於結束\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 193750
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "450",
+                      "530",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 108,
+            "name": "訂單 \"付款晚於結束\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;組合與第n件;組合價高於兩件合計時不組組合且紅茶半價後應付680",
+        "keyword": "場景",
+        "line": 115,
+        "name": "組合價高於兩件合計時不組組合且紅茶半價後應付680",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存",
+                      "組合價"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有",
+                      "800"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 116,
+            "name": "訂單 \"組合不便宜\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 45666
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 119,
+            "name": "訂單 \"組合不便宜\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 125000
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 123,
+            "name": "顧客建立訂單 \"組合不便宜\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 132959
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "450"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "150"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 124,
+            "name": "訂單 \"組合不便宜\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 32874
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "600",
+                      "680",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "N-TEA：150",
+                      "B-TEA、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 128,
+            "name": "訂單 \"組合不便宜\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;組合與第n件;三件同價紅茶只折件序最大的一件且應付830",
+        "keyword": "場景",
+        "line": 133,
+        "name": "三件同價紅茶只折件序最大的一件且應付830",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 153915
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 134,
+            "name": "訂單 \"三件紅茶\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 604874
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "3"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 137,
+            "name": "訂單 \"三件紅茶\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 373416
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 142,
+            "name": "顧客建立訂單 \"三件紅茶\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 108165
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "300"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2",
+                      "300",
+                      "300",
+                      "原價",
+                      "300"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "3",
+                      "300",
+                      "300",
+                      "原價",
+                      "150"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 143,
+            "name": "訂單 \"三件紅茶\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 34250
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "750",
+                      "830",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "N-TEA：150",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 148,
+            "name": "訂單 \"三件紅茶\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;組合與第n件;金卡兩件紅茶的半價恰好0.5元時進位且應付508",
+        "keyword": "場景",
+        "line": 153,
+        "name": "金卡兩件紅茶的半價恰好0.5元時進位且應付508",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 214708
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "金卡",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 154,
+            "name": "訂單 \"金卡半價進位\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 103375
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 157,
+            "name": "訂單 \"金卡半價進位\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 92750
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 161,
+            "name": "顧客建立訂單 \"金卡半價進位\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 47041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "285",
+                      "M-GOLD",
+                      "285"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2",
+                      "300",
+                      "285",
+                      "M-GOLD",
+                      "143"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 162,
+            "name": "訂單 \"金卡半價進位\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 235750
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "428",
+                      "508",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "N-TEA：142",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 166,
+            "name": "訂單 \"金卡半價進位\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;組合與第n件;兩套組合都成交後滿額折現並送贈品且應付1260",
+        "keyword": "場景",
+        "line": 171,
+        "name": "兩套組合都成交後滿額折現並送贈品且應付1260",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 59874
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 172,
+            "name": "訂單 \"兩套組合\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 25500
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 175,
+            "name": "訂單 \"兩套組合\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 1938916
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 181,
+            "name": "顧客建立訂單 \"兩套組合\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 223041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "378"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "378"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "252"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2",
+                      "300",
+                      "300",
+                      "原價",
+                      "252"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 182,
+            "name": "訂單 \"兩套組合\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 281292
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1260",
+                      "1260",
+                      "否",
+                      "無",
+                      "MUG-C",
+                      "1",
+                      "0",
+                      "400",
+                      "無",
+                      "B-TEA：140、T-CASH：100、F-999：80、G-1200：0",
+                      "T-FOOD：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 188,
+            "name": "訂單 \"兩套組合\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;滿額擇優與四捨五入;可計入金額剛好2000時滿額折現只取最高階250",
+        "keyword": "場景",
+        "line": 195,
+        "name": "可計入金額剛好2000時滿額折現只取最高階250",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 168541
+            },
+            "arguments": [],
+            "keyword": "假設",
+            "line": 196,
+            "name": "訂單 \"剛好兩千\" 在步驟 2 的可計入金額是 2000",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:88"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 80332
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 197,
+            "name": "訂單 \"剛好兩千\" 只有 \"T-CASH\" 達標",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:95"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 32290
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 198,
+            "name": "顧客建立訂單 \"剛好兩千\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 107708
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 199,
+            "name": "訂單 \"剛好兩千\" 的 \"T-CASH\" 折抵應該是 250",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:99"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;滿額擇優與四捨五入;滿額折現與滿額打折折抵相同時採用折現",
+        "keyword": "場景",
+        "line": 202,
+        "name": "滿額折現與滿額打折折抵相同時採用折現",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 84000
+            },
+            "arguments": [],
+            "keyword": "假設",
+            "line": 203,
+            "name": "訂單 \"滿額同分\" 在步驟 2 的食品合計是 1000",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:104"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 83250
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 204,
+            "name": "訂單 \"滿額同分\" 在步驟 2 的家居合計是 720",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:111"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 27749
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 205,
+            "name": "顧客建立訂單 \"滿額同分\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 41124
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 206,
+            "name": "訂單 \"滿額同分\" 的 \"T-CASH\" 與 \"T-FOOD\" 試算折抵應該都是 100",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:118"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 48083
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 207,
+            "name": "訂單 \"滿額同分\" 應該採用 \"T-CASH\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:124"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;滿額擇優與四捨五入;食品合計1001時先合成一筆再四捨五入且折抵100",
+        "keyword": "場景",
+        "line": 210,
+        "name": "食品合計1001時先合成一筆再四捨五入且折抵100",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 29292
+            },
+            "arguments": [],
+            "keyword": "假設",
+            "line": 211,
+            "name": "訂單 \"食品合計後捨入\" 在步驟 2 的食品合計是 1001",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:104"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 113958
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 212,
+            "name": "訂單 \"食品合計後捨入\" 的可計入金額已達 \"T-FOOD\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:128"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 33917
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 213,
+            "name": "顧客建立訂單 \"食品合計後捨入\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 181666
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 214,
+            "name": "訂單 \"食品合計後捨入\" 的 \"T-FOOD\" 折抵應該是 100",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:99"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 175333
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 215,
+            "name": "訂單 \"食品合計後捨入\" 的食品折後金額應該是 901",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:135"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;滿額擇優與四捨五入;四件高山烏龍加一件紅茶時食品九折的0.5元進位且應付1625",
+        "keyword": "場景",
+        "line": 218,
+        "name": "四件高山烏龍加一件紅茶時食品九折的0.5元進位且應付1625",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 164625
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 219,
+            "name": "訂單 \"食品九折進位\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 77833
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 222,
+            "name": "訂單 \"食品九折進位\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 351834
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 229,
+            "name": "顧客建立訂單 \"食品九折進位\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 276875
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "367"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "405"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "405"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "203"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "245"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 230,
+            "name": "訂單 \"食品九折進位\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 238166
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1625",
+                      "1625",
+                      "否",
+                      "無",
+                      "MUG-C",
+                      "1",
+                      "0",
+                      "400",
+                      "無",
+                      "B-TEA：70、N-TEA：225、T-FOOD：180、F-999：80、G-1200：0",
+                      "T-CASH"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 237,
+            "name": "訂單 \"食品九折進位\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;滿額擇優與四捨五入;五件紅茶的可計入金額剛好1200時折現免運並送贈品且應付1100",
+        "keyword": "場景",
+        "line": 242,
+        "name": "五件紅茶的可計入金額剛好1200時折現免運並送贈品且應付1100",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 92416
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 243,
+            "name": "訂單 \"剛好滿額贈\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 53583
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "5"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 246,
+            "name": "訂單 \"剛好滿額贈\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 359541
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 253,
+            "name": "顧客建立訂單 \"剛好滿額贈\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 144999
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "274"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2",
+                      "300",
+                      "300",
+                      "原價",
+                      "275"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "3",
+                      "300",
+                      "300",
+                      "原價",
+                      "275"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "4",
+                      "300",
+                      "300",
+                      "原價",
+                      "138"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "5",
+                      "300",
+                      "300",
+                      "原價",
+                      "138"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 254,
+            "name": "訂單 \"剛好滿額贈\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 198916
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1100",
+                      "1100",
+                      "否",
+                      "無",
+                      "MUG-C",
+                      "1",
+                      "0",
+                      "400",
+                      "無",
+                      "N-TEA：300、T-CASH：100、F-999：80、G-1200：0",
+                      "T-FOOD：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 261,
+            "name": "訂單 \"剛好滿額贈\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;不可疊加券改成只折100時與滿額相同並保留滿額",
+        "keyword": "場景",
+        "line": 268,
+        "name": "不可疊加券改成只折100時與滿額相同並保留滿額",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 88082
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存",
+                      "券面額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-EXCL",
+                      "有",
+                      "100"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 269,
+            "name": "訂單 \"券與滿額同額\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 278999
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 272,
+            "name": "訂單 \"券與滿額同額\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 294166
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 277,
+            "name": "顧客建立訂單 \"券與滿額同額\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 92709
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "372"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "410"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "248"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 278,
+            "name": "訂單 \"券與滿額同額\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 190417
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1030",
+                      "1030",
+                      "否",
+                      "與滿額優惠折抵相同，保留滿額優惠",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、T-CASH：100、F-999：80",
+                      "C-EXCL：與滿額優惠折抵相同，保留滿額優惠、T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 283,
+            "name": "訂單 \"券與滿額同額\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;適用金額小於券面額時實際折抵30且商品應付為0",
+        "keyword": "場景",
+        "line": 288,
+        "name": "適用金額小於券面額時實際折抵30且商品應付為0",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 294041
+            },
+            "arguments": [],
+            "keyword": "假設",
+            "line": 289,
+            "name": "訂單 \"券大於商品\" 的適用商品金額是 30",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:139"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 149250
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 290,
+            "name": "訂單 \"券大於商品\" 提交面額 80、門檻 0 的折現券",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:145"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 206374
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 291,
+            "name": "顧客建立訂單 \"券大於商品\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 190291
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 292,
+            "name": "訂單 \"券大於商品\" 的實際折抵應該是 30",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:152"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 218417
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 293,
+            "name": "訂單 \"券大於商品\" 的商品應付應該是 0",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:156"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;折80券未達500時仍建立訂單且應付530",
+        "keyword": "場景",
+        "line": 296,
+        "name": "折80券未達500時仍建立訂單且應付530",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 145707
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-80",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 297,
+            "name": "訂單 \"折80未達\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 86915
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 300,
+            "name": "訂單 \"折80未達\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 54083
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 303,
+            "name": "顧客建立訂單 \"折80未達\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 132041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "450"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 304,
+            "name": "訂單 \"折80未達\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 143291
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "450",
+                      "530",
+                      "否",
+                      "適用商品未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻、C-80：適用商品未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 307,
+            "name": "訂單 \"折80未達\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;不可疊加券未達800時維持原計算且應付760",
+        "keyword": "場景",
+        "line": 312,
+        "name": "不可疊加券未達800時維持原計算且應付760",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 41291
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-EXCL",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 313,
+            "name": "訂單 \"不可疊加未達\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 120790
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 316,
+            "name": "訂單 \"不可疊加未達\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 81250
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 320,
+            "name": "顧客建立訂單 \"不可疊加未達\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 195500
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "408"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 321,
+            "name": "訂單 \"不可疊加未達\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 109207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "680",
+                      "760",
+                      "否",
+                      "適用商品未達門檻",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70",
+                      "C-EXCL：適用商品未達門檻、T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 325,
+            "name": "訂單 \"不可疊加未達\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;可計入金額810時不可疊加券勝出且應付690",
+        "keyword": "場景",
+        "line": 330,
+        "name": "可計入金額810時不可疊加券勝出且應付690",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 125791
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-EXCL",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 331,
+            "name": "訂單 \"不可疊加勝出810\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 154625
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 334,
+            "name": "訂單 \"不可疊加勝出810\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 220792
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 338,
+            "name": "顧客建立訂單 \"不可疊加勝出810\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 102916
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "338"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 339,
+            "name": "訂單 \"不可疊加勝出810\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 78417
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "610",
+                      "690",
+                      "是",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "C-EXCL：200",
+                      "T-CASH：與折價券相比折抵較少，未使用、T-FOOD：與折價券相比折抵較少，未使用、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 343,
+            "name": "訂單 \"不可疊加勝出810\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;兩件陶杯達門檻時排除特價券折50且應付750",
+        "keyword": "場景",
+        "line": 348,
+        "name": "兩件陶杯達門檻時排除特價券折50且應付750",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 265208
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-NOTEA",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 349,
+            "name": "訂單 \"排除特價達檻\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 194582
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 352,
+            "name": "訂單 \"排除特價達檻\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 236416
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 356,
+            "name": "顧客建立訂單 \"排除特價達檻\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 128707
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "335"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "2",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "335"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 357,
+            "name": "訂單 \"排除特價達檻\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 109207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "670",
+                      "750",
+                      "是",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "C-NOTEA：50",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 361,
+            "name": "訂單 \"排除特價達檻\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;銀卡使用無門檻銀卡券折30且應付500",
+        "keyword": "場景",
+        "line": 366,
+        "name": "銀卡使用無門檻銀卡券折30且應付500",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 121875
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "銀卡",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-SILVER",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 367,
+            "name": "訂單 \"銀卡券折30\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 63083
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 370,
+            "name": "訂單 \"銀卡券折30\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 124083
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 373,
+            "name": "顧客建立訂單 \"銀卡券折30\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 154958
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "420"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 374,
+            "name": "訂單 \"銀卡券折30\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 158500
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "420",
+                      "500",
+                      "是",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "C-SILVER：30",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 377,
+            "name": "訂單 \"銀卡券折30\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;銀卡券在滿額之後再折30且應付1230",
+        "keyword": "場景",
+        "line": 382,
+        "name": "銀卡券在滿額之後再折30且應付1230",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 195333
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "銀卡",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-SILVER",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 383,
+            "name": "訂單 \"銀卡券疊滿額\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 249207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 386,
+            "name": "訂單 \"銀卡券疊滿額\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 345083
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 392,
+            "name": "顧客建立訂單 \"銀卡券疊滿額\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 88333
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "369"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "369"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "246"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "2",
+                      "300",
+                      "300",
+                      "原價",
+                      "246"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 393,
+            "name": "訂單 \"銀卡券疊滿額\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 122792
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1230",
+                      "1230",
+                      "是",
+                      "無",
+                      "MUG-C",
+                      "1",
+                      "0",
+                      "400",
+                      "無",
+                      "B-TEA：140、T-CASH：100、C-SILVER：30、F-999：80、G-1200：0",
+                      "T-FOOD：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 399,
+            "name": "訂單 \"銀卡券疊滿額\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;券的門檻、比較與會員;券不存在時拒絕建立訂單",
+        "keyword": "場景",
+        "line": 404,
+        "name": "券不存在時拒絕建立訂單",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 87041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "不存在",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 405,
+            "name": "訂單 \"券不存在\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 73208
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 408,
+            "name": "訂單 \"券不存在\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 259165
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 411,
+            "name": "顧客建立訂單 \"券不存在\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 144834
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 412,
+            "name": "訂單 \"券不存在\" 應該被拒絕建立，原因是 \"券不存在\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:82"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;點數上限與分攤;可折商品953元且顧客有1000點時只折190點",
+        "keyword": "場景",
+        "line": 417,
+        "name": "可折商品953元且顧客有1000點時只折190點",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 184750
+            },
+            "arguments": [],
+            "keyword": "假設",
+            "line": 418,
+            "name": "訂單 \"點數捨去\" 在步驟 5 後可被點數折抵的商品金額是 953",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:160"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 4602292
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 419,
+            "name": "訂單 \"點數捨去\" 的顧客持有 1000 點",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:167"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 120999
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 420,
+            "name": "顧客建立訂單 \"點數捨去\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 166459
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 421,
+            "name": "訂單 \"點數捨去\" 的點數折抵應該是 190",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:173"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;點數上限與分攤;顧客只有40點時用完全部點數且應付1490",
+        "keyword": "場景",
+        "line": 424,
+        "name": "顧客只有40點時用完全部點數且應付1490",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 52415
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "40",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 425,
+            "name": "訂單 \"點數少於上限\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 20292
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CARD-D",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 428,
+            "name": "訂單 \"點數少於上限\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 173708
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 432,
+            "name": "顧客建立訂單 \"點數少於上限\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 50915
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CARD-D",
+                      "1",
+                      "1000",
+                      "1000",
+                      "原價",
+                      "1000"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "410"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 433,
+            "name": "訂單 \"點數少於上限\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 97833
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "40",
+                      "80",
+                      "1410",
+                      "1490",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 437,
+            "name": "訂單 \"點數少於上限\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;點數上限與分攤;只有禮品卡時1000點也不能折且應付1080",
+        "keyword": "場景",
+        "line": 442,
+        "name": "只有禮品卡時1000點也不能折且應付1080",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 17375
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "1000",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 443,
+            "name": "訂單 \"只有禮品卡\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 21540
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CARD-D",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 446,
+            "name": "訂單 \"只有禮品卡\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 39999
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 449,
+            "name": "顧客建立訂單 \"只有禮品卡\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 32207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "CARD-D",
+                      "1",
+                      "1000",
+                      "1000",
+                      "原價",
+                      "1000"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 450,
+            "name": "訂單 \"只有禮品卡\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38916
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "1000",
+                      "1080",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 453,
+            "name": "訂單 \"只有禮品卡\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;點數上限與分攤;一套組合用滿點數上限136且應付624",
+        "keyword": "場景",
+        "line": 458,
+        "name": "一套組合用滿點數上限136且應付624",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 98458
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "1000",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 459,
+            "name": "訂單 \"組合點數上限\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 33500
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 462,
+            "name": "訂單 \"組合點數上限\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 106292
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 466,
+            "name": "顧客建立訂單 \"組合點數上限\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 102499
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "326"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "218"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 467,
+            "name": "訂單 \"組合點數上限\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 108875
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "136",
+                      "80",
+                      "544",
+                      "624",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 471,
+            "name": "訂單 \"組合點數上限\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;點數上限與分攤;點數不會取消已經成立的免運且應付824",
+        "keyword": "場景",
+        "line": 476,
+        "name": "點數不會取消已經成立的免運且應付824",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 54459
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "1000",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 477,
+            "name": "訂單 \"點數不取消免運\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 62667
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 480,
+            "name": "訂單 \"點數不取消免運\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 122999
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 485,
+            "name": "顧客建立訂單 \"點數不取消免運\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 135667
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "298"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "327"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "199"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 486,
+            "name": "訂單 \"點數不取消免運\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 160792
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "206",
+                      "0",
+                      "824",
+                      "824",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、T-CASH：100、F-999：80",
+                      "T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 491,
+            "name": "訂單 \"點數不取消免運\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;點數上限與分攤;折現券之後再折點數仍維持免運且應付760",
+        "keyword": "場景",
+        "line": 496,
+        "name": "折現券之後再折點數仍維持免運且應付760",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 54290
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "1000",
+                      "C-80",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 497,
+            "name": "訂單 \"券後點數仍免運\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 50249
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 500,
+            "name": "訂單 \"券後點數仍免運\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 58709
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 505,
+            "name": "顧客建立訂單 \"券後點數仍免運\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 42040
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "274"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "302"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "184"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 506,
+            "name": "訂單 \"券後點數仍免運\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 197209
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "190",
+                      "0",
+                      "760",
+                      "760",
+                      "是",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、T-CASH：100、C-80：80、F-999：80",
+                      "T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 511,
+            "name": "訂單 \"券後點數仍免運\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;運費;超商未達免運時原始運費是60且應付510",
+        "keyword": "場景",
+        "line": 518,
+        "name": "超商未達免運時原始運費是60且應付510",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 335332
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "超商",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 519,
+            "name": "訂單 \"超商運費60\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 64624
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 522,
+            "name": "訂單 \"超商運費60\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 150125
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 525,
+            "name": "顧客建立訂單 \"超商運費60\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 129042
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "450"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 526,
+            "name": "訂單 \"超商運費60\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 216042
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "60",
+                      "450",
+                      "510",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "無",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 529,
+            "name": "訂單 \"超商運費60\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;運費;未達免運的超商使用運費券後運費是10且應付690",
+        "keyword": "場景",
+        "line": 534,
+        "name": "未達免運的超商使用運費券後運費是10且應付690",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 191333
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "超商",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-SHIP50",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 535,
+            "name": "訂單 \"超商運費券\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 134125
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 538,
+            "name": "訂單 \"超商運費券\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 360000
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 542,
+            "name": "顧客建立訂單 \"超商運費券\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 128542
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "408"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "272"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 543,
+            "name": "訂單 \"超商運費券\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 71207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "10",
+                      "680",
+                      "690",
+                      "是",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、C-SHIP50：50",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 547,
+            "name": "訂單 \"超商運費券\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;運費;已經免運的訂單改走超商時運費仍是0且應付1030",
+        "keyword": "場景",
+        "line": 552,
+        "name": "已經免運的訂單改走超商時運費仍是0且應付1030",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 147333
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "超商",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 553,
+            "name": "訂單 \"免運改超商\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 68875
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 556,
+            "name": "訂單 \"免運改超商\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 372875
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 561,
+            "name": "顧客建立訂單 \"免運改超商\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 63292
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "372"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "410"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "248"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 562,
+            "name": "訂單 \"免運改超商\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 45208
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1030",
+                      "1030",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、T-CASH：100、F-999：60",
+                      "T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 567,
+            "name": "訂單 \"免運改超商\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;通路與付款不回頭改前面的結果;app與信用卡接連各折30且運費仍是80應付700",
+        "keyword": "場景",
+        "line": 576,
+        "name": "App與信用卡接連各折30且運費仍是80應付700",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 98207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "App",
+                      "宅配",
+                      "信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 577,
+            "name": "訂單 \"通路與付款接連折\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 61333
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 580,
+            "name": "訂單 \"通路與付款接連折\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 195875
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 584,
+            "name": "顧客建立訂單 \"通路與付款接連折\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 113207
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "372"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "248"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 585,
+            "name": "訂單 \"通路與付款接連折\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 180665
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "80",
+                      "620",
+                      "700",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、A-APP：30、K-CARD：30",
+                      "T-CASH：未達門檻、T-FOOD：未達門檻、F-999：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 589,
+            "name": "訂單 \"通路與付款接連折\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;通路與付款不回頭改前面的結果;滿額贈與免運不因app和信用卡消失且應付1515",
+        "keyword": "場景",
+        "line": 594,
+        "name": "滿額贈與免運不因App和信用卡消失且應付1515",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 121041
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "App",
+                      "宅配",
+                      "信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 595,
+            "name": "訂單 \"贈品不因通路付款消失\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 124707
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 598,
+            "name": "訂單 \"贈品不因通路付款消失\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 221749
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 605,
+            "name": "顧客建立訂單 \"贈品不因通路付款消失\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 84666
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "388"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "389"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "196"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "196"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "346"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 606,
+            "name": "訂單 \"贈品不因通路付款消失\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 43083
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1515",
+                      "1515",
+                      "否",
+                      "無",
+                      "MUG-C",
+                      "1",
+                      "0",
+                      "400",
+                      "無",
+                      "N-TEA：450、T-FOOD：135、F-999：80、A-APP：30、K-CARD：30、G-1200：0",
+                      "T-CASH"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 613,
+            "name": "訂單 \"贈品不因通路付款消失\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;通路與付款不回頭改前面的結果;已套用的折現券不因app和信用卡被取消且應付890",
+        "keyword": "場景",
+        "line": 618,
+        "name": "已套用的折現券不因App和信用卡被取消且應付890",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 58542
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "App",
+                      "宅配",
+                      "信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "C-80",
+                      "有"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 619,
+            "name": "訂單 \"折現券不因通路付款取消\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38124
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 622,
+            "name": "訂單 \"折現券不因通路付款取消\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 95874
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 627,
+            "name": "顧客建立訂單 \"折現券不因通路付款取消\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 49499
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "321"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "354"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-B",
+                      "1",
+                      "300",
+                      "300",
+                      "原價",
+                      "215"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 628,
+            "name": "訂單 \"折現券不因通路付款取消\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 70917
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "890",
+                      "890",
+                      "是",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "無",
+                      "B-TEA：70、T-CASH：100、C-80：80、F-999：80、A-APP：30、K-CARD：30",
+                      "T-FOOD：未達門檻、G-1200：未達門檻"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 633,
+            "name": "訂單 \"折現券不因通路付款取消\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;分攤平手與贈品缺貨;基礎相同時sku字典序較小的一件先分到1元",
+        "keyword": "場景",
+        "line": 640,
+        "name": "基礎相同時SKU字典序較小的一件先分到1元",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 464540
+            },
+            "arguments": [],
+            "keyword": "假設",
+            "line": 641,
+            "name": "訂單 \"分攤平手\" 的 \"MUG-C\" 件序 1 分攤前金額是 100",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:177"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 410666
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 642,
+            "name": "訂單 \"分攤平手\" 的 \"TEA-B\" 件序 1 分攤前金額是 100",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:177"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 276333
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 643,
+            "name": "訂單 \"分攤平手\" 把 1 元折抵分攤到這兩件",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:184"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 159125
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 644,
+            "name": "訂單 \"分攤平手\" 的 \"MUG-C\" 件序 1 應該分到折抵 1",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:189"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 120625
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 645,
+            "name": "訂單 \"分攤平手\" 的 \"TEA-B\" 件序 1 應該分到折抵 0",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:189"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;分攤平手與贈品缺貨;贈品庫存為0時訂單仍成立但沒有贈品列且應付1575",
+        "keyword": "場景",
+        "line": 648,
+        "name": "贈品庫存為0時訂單仍成立但沒有贈品列且應付1575",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 134957
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "點數",
+                      "券",
+                      "贈品庫存"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-15 12:00:00",
+                      "0",
+                      "無",
+                      "0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 649,
+            "name": "訂單 \"贈品送完\" 要結帳",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:5"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 25250
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 652,
+            "name": "訂單 \"贈品送完\" 的購買件是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:24"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 111750
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 659,
+            "name": "顧客建立訂單 \"贈品送完\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:32"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 23750
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "SKU",
+                      "件序",
+                      "原價",
+                      "步驟1成交價",
+                      "步驟1活動",
+                      "最終件金額"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "1",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "404"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "2",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "405"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "3",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "203"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "TEA-A",
+                      "4",
+                      "500",
+                      "450",
+                      "S-TEA-A",
+                      "203"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "MUG-C",
+                      "1",
+                      "400",
+                      "360",
+                      "P-HOME",
+                      "360"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "那麼",
+            "line": 660,
+            "name": "訂單 \"贈品送完\" 的件明細應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:49"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 72042
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "點數折抵",
+                      "運費",
+                      "商品應付",
+                      "訂單應付",
+                      "券消耗",
+                      "券原因",
+                      "贈品SKU",
+                      "贈品數量",
+                      "贈品列金額",
+                      "追回原價",
+                      "贈品原因",
+                      "套用",
+                      "未套用"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "0",
+                      "0",
+                      "1575",
+                      "1575",
+                      "否",
+                      "無",
+                      "無",
+                      "0",
+                      "0",
+                      "0",
+                      "贈品已送完",
+                      "N-TEA：450、T-FOOD：135、F-999：80",
+                      "T-CASH、G-1200：贈品已送完"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "而且",
+            "line": 667,
+            "name": "訂單 \"贈品送完\" 的成交結算應該是",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:62"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "下單時鎖住各項優惠規則;下單後金額凍結;下單之後改價換檔不回溯已凍結的成交價與應付",
+        "keyword": "場景",
+        "line": 674,
+        "name": "下單之後改價換檔不回溯已凍結的成交價與應付",
+        "steps": [
+          {
+            "result": {
+              "status": "passed",
+              "duration": 295666
+            },
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "會員",
+                      "通路",
+                      "物流",
+                      "付款",
+                      "建立時間",
+                      "SKU",
+                      "件序",
+                      "成交價",
+                      "應付"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "一般",
+                      "網頁",
+                      "宅配",
+                      "非信用卡",
+                      "2026-10-01 00:00:00",
+                      "TEA-A",
+                      "1",
+                      "450",
+                      "530"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "假設",
+            "line": 675,
+            "name": "訂單 \"凍結烏龍\" 已成立",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:194"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 140333
+            },
+            "arguments": [],
+            "keyword": "當",
+            "line": 678,
+            "name": "商品改價且活動換檔後讀取訂單 \"凍結烏龍\"",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:218"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 53291
+            },
+            "arguments": [],
+            "keyword": "那麼",
+            "line": 679,
+            "name": "訂單 \"凍結烏龍\" 的 \"TEA-A\" 件序 1 步驟1成交價應該仍是 450",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:222"
+            }
+          },
+          {
+            "result": {
+              "status": "passed",
+              "duration": 38542
+            },
+            "arguments": [],
+            "keyword": "而且",
+            "line": 680,
+            "name": "訂單 \"凍結烏龍\" 的應付應該仍是 530",
+            "match": {
+              "location": "features/step_definitions/order_steps.js:229"
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "下單時鎖住各項優惠規則",
+    "line": 2,
+    "keyword": "功能",
+    "name": "下單時鎖住各項優惠規則",
+    "tags": [],
+    "uri": "features/下單優惠-規則與邊界.feature"
+  }
+]

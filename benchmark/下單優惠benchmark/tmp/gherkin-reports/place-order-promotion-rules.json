@@ -1,0 +1,201 @@
+{
+  "language": "zh-TW",
+  "scenarios": [
+    {
+      "kind": "scenario",
+      "name": "單品特價與分類折扣同價時命中單品特價",
+      "line": 17
+    },
+    {
+      "kind": "scenario",
+      "name": "一般會員買一件陶杯時家居九折勝出且應付440",
+      "line": 33
+    },
+    {
+      "kind": "scenario",
+      "name": "銀卡買一件紅茶時沒有會員價且應付380",
+      "line": 49
+    },
+    {
+      "kind": "scenario",
+      "name": "檔期結束後陶杯不再走家居折扣且應付480",
+      "line": 65
+    },
+    {
+      "kind": "scenario",
+      "name": "檔期結束後金卡買高山烏龍不再使用會員價且應付580",
+      "line": 81
+    },
+    {
+      "kind": "scenario",
+      "name": "付款時間晚於檔期結束仍用建立訂單時的特價且應付530",
+      "line": 97
+    },
+    {
+      "kind": "scenario",
+      "name": "組合價高於兩件合計時不組組合且紅茶半價後應付680",
+      "line": 115
+    },
+    {
+      "kind": "scenario",
+      "name": "三件同價紅茶只折件序最大的一件且應付830",
+      "line": 133
+    },
+    {
+      "kind": "scenario",
+      "name": "金卡兩件紅茶的半價恰好0.5元時進位且應付508",
+      "line": 153
+    },
+    {
+      "kind": "scenario",
+      "name": "兩套組合都成交後滿額折現並送贈品且應付1260",
+      "line": 171
+    },
+    {
+      "kind": "scenario",
+      "name": "可計入金額剛好2000時滿額折現只取最高階250",
+      "line": 195
+    },
+    {
+      "kind": "scenario",
+      "name": "滿額折現與滿額打折折抵相同時採用折現",
+      "line": 202
+    },
+    {
+      "kind": "scenario",
+      "name": "食品合計1001時先合成一筆再四捨五入且折抵100",
+      "line": 210
+    },
+    {
+      "kind": "scenario",
+      "name": "四件高山烏龍加一件紅茶時食品九折的0.5元進位且應付1625",
+      "line": 218
+    },
+    {
+      "kind": "scenario",
+      "name": "五件紅茶的可計入金額剛好1200時折現免運並送贈品且應付1100",
+      "line": 242
+    },
+    {
+      "kind": "scenario",
+      "name": "不可疊加券改成只折100時與滿額相同並保留滿額",
+      "line": 268
+    },
+    {
+      "kind": "scenario",
+      "name": "適用金額小於券面額時實際折抵30且商品應付為0",
+      "line": 288
+    },
+    {
+      "kind": "scenario",
+      "name": "折80券未達500時仍建立訂單且應付530",
+      "line": 296
+    },
+    {
+      "kind": "scenario",
+      "name": "不可疊加券未達800時維持原計算且應付760",
+      "line": 312
+    },
+    {
+      "kind": "scenario",
+      "name": "可計入金額810時不可疊加券勝出且應付690",
+      "line": 330
+    },
+    {
+      "kind": "scenario",
+      "name": "兩件陶杯達門檻時排除特價券折50且應付750",
+      "line": 348
+    },
+    {
+      "kind": "scenario",
+      "name": "銀卡使用無門檻銀卡券折30且應付500",
+      "line": 366
+    },
+    {
+      "kind": "scenario",
+      "name": "銀卡券在滿額之後再折30且應付1230",
+      "line": 382
+    },
+    {
+      "kind": "scenario",
+      "name": "券不存在時拒絕建立訂單",
+      "line": 404
+    },
+    {
+      "kind": "scenario",
+      "name": "可折商品953元且顧客有1000點時只折190點",
+      "line": 417
+    },
+    {
+      "kind": "scenario",
+      "name": "顧客只有40點時用完全部點數且應付1490",
+      "line": 424
+    },
+    {
+      "kind": "scenario",
+      "name": "只有禮品卡時1000點也不能折且應付1080",
+      "line": 442
+    },
+    {
+      "kind": "scenario",
+      "name": "一套組合用滿點數上限136且應付624",
+      "line": 458
+    },
+    {
+      "kind": "scenario",
+      "name": "點數不會取消已經成立的免運且應付824",
+      "line": 476
+    },
+    {
+      "kind": "scenario",
+      "name": "折現券之後再折點數仍維持免運且應付760",
+      "line": 496
+    },
+    {
+      "kind": "scenario",
+      "name": "超商未達免運時原始運費是60且應付510",
+      "line": 518
+    },
+    {
+      "kind": "scenario",
+      "name": "未達免運的超商使用運費券後運費是10且應付690",
+      "line": 534
+    },
+    {
+      "kind": "scenario",
+      "name": "已經免運的訂單改走超商時運費仍是0且應付1030",
+      "line": 552
+    },
+    {
+      "kind": "scenario",
+      "name": "App與信用卡接連各折30且運費仍是80應付700",
+      "line": 576
+    },
+    {
+      "kind": "scenario",
+      "name": "滿額贈與免運不因App和信用卡消失且應付1515",
+      "line": 594
+    },
+    {
+      "kind": "scenario",
+      "name": "已套用的折現券不因App和信用卡被取消且應付890",
+      "line": 618
+    },
+    {
+      "kind": "scenario",
+      "name": "基礎相同時SKU字典序較小的一件先分到1元",
+      "line": 640
+    },
+    {
+      "kind": "scenario",
+      "name": "贈品庫存為0時訂單仍成立但沒有贈品列且應付1575",
+      "line": 648
+    },
+    {
+      "kind": "scenario",
+      "name": "下單之後改價換檔不回溯已凍結的成交價與應付",
+      "line": 674
+    }
+  ],
+  "findings": []
+}

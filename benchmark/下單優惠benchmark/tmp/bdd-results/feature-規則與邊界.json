@@ -1,0 +1,17 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-規則與邊界.feature",
+    "--format",
+    "json:tmp/bdd-results/cucumber-規則與邊界.json",
+    "--format",
+    "progress"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": "...............................................................................................................................................................................................\n\n39 scenarios (39 passed)\n191 steps (191 passed)\n0m 0.153s (0m 0.036s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

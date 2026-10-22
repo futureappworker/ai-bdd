@@ -1,0 +1,200 @@
+{
+  "version": "2.21",
+  "themes": {
+    "mode": ["light", "dark"]
+  },
+  "variables": {
+    "color.surface": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#FFFFFF",
+          "theme": { "mode": "light" }
+        },
+        {
+          "value": "#111827",
+          "theme": { "mode": "dark" }
+        }
+      ]
+    },
+    "color.text": {
+      "type": "color",
+      "value": [
+        {
+          "value": "#111827",
+          "theme": { "mode": "light" }
+        },
+        {
+          "value": "#F9FAFB",
+          "theme": { "mode": "dark" }
+        }
+      ]
+    },
+    "color.action": {
+      "type": "color",
+      "value": "#2563EB"
+    },
+    "color.action-label": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "color.danger": {
+      "type": "color",
+      "value": "#DC2626"
+    }
+  },
+  "children": [
+    {
+      "id": "album-list",
+      "type": "frame",
+      "name": "相簿清單",
+      "x": 0,
+      "y": 0,
+      "width": 1280,
+      "height": 800,
+      "fill": "$color.surface",
+      "layout": "vertical",
+      "gap": 16,
+      "padding": 24,
+      "children": [
+        {
+          "id": "album-list-state",
+          "type": "text",
+          "name": "可整理狀態",
+          "content": "可整理",
+          "fill": "$color.text",
+          "fontFamily": "Inter",
+          "fontSize": 14,
+          "fontWeight": "600",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "album-list-title",
+          "type": "text",
+          "name": "相簿清單標題",
+          "content": "相簿清單",
+          "fill": "$color.text",
+          "fontFamily": "Inter",
+          "fontSize": 32,
+          "fontWeight": "700",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "album-list-body",
+          "type": "text",
+          "name": "相簿清單說明",
+          "content": "上傳照片後可拖曳排序，並查看整理後的相簿。",
+          "fill": "$color.text",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": "400",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "upload-photo",
+          "type": "frame",
+          "name": "上傳照片",
+          "width": "fill_container",
+          "height": 44,
+          "fill": "$color.action",
+          "cornerRadius": 8,
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "upload-photo-label",
+              "type": "text",
+              "name": "上傳照片文字",
+              "content": "上傳照片",
+              "fill": "$color.action-label",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textGrowth": "auto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upload-error",
+      "type": "frame",
+      "name": "上傳失敗",
+      "x": 1360,
+      "y": 0,
+      "width": 1280,
+      "height": 800,
+      "fill": "$color.surface",
+      "layout": "vertical",
+      "gap": 16,
+      "padding": 24,
+      "children": [
+        {
+          "id": "upload-error-state",
+          "type": "text",
+          "name": "失敗狀態",
+          "content": "上傳失敗",
+          "fill": "$color.danger",
+          "fontFamily": "Inter",
+          "fontSize": 14,
+          "fontWeight": "600",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "upload-error-title",
+          "type": "text",
+          "name": "失敗標題",
+          "content": "無法加入照片",
+          "fill": "$color.text",
+          "fontFamily": "Inter",
+          "fontSize": 32,
+          "fontWeight": "700",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "upload-error-body",
+          "type": "text",
+          "name": "失敗說明",
+          "content": "請確認照片檔案可讀取後再試一次。",
+          "fill": "$color.text",
+          "fontFamily": "Inter",
+          "fontSize": 16,
+          "fontWeight": "400",
+          "textGrowth": "fixed-width",
+          "width": "fill_container"
+        },
+        {
+          "id": "retry-upload",
+          "type": "frame",
+          "name": "重新上傳",
+          "width": "fill_container",
+          "height": 44,
+          "fill": "$color.action",
+          "cornerRadius": 8,
+          "layout": "horizontal",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "children": [
+            {
+              "id": "retry-upload-label",
+              "type": "text",
+              "name": "重新上傳文字",
+              "content": "重新上傳",
+              "fill": "$color.action-label",
+              "fontFamily": "Inter",
+              "fontSize": 16,
+              "fontWeight": "600",
+              "textGrowth": "auto"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

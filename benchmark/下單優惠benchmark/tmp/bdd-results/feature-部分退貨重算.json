@@ -1,0 +1,17 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-部分退貨重算.feature",
+    "--format",
+    "json:tmp/bdd-results/cucumber-部分退貨重算.json",
+    "--format",
+    "progress"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": "..................................................\n\n10 scenarios (10 passed)\n50 steps (50 passed)\n0m 0.066s (0m 0.015s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

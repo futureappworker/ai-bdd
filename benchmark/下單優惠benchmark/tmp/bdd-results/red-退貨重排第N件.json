@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-部分退貨重算.feature",
+    "--name",
+    "^退回一件烏龍後第N件與滿額同時重排且退款190$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 1,
+  "stdout": "..F--\n\nFailed scenarios:\n  1) 退回一件烏龍後第N件與滿額同時重排且退款190 # features/下單優惠-部分退貨重算.feature:17\n       當顧客對訂單 \"退貨重排第N件\" 退回這些件 # features/step_definitions/order_steps.js:240\n         | SKU   | 件序 |\n         | TEA-A | 1  |\n           TypeError: this.orderService.returnItems is not a function\n               at OrderWorld.<anonymous> (/Users/ben/Documents/app/ai-bdd/features/step_definitions/order_steps.js:246:47)\n\n1 scenario (1 failed)\n5 steps (2 passed, 2 skipped, 1 failed)\n0m 0.016s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}

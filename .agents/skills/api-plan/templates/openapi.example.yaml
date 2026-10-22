@@ -1,0 +1,82 @@
+openapi: 3.1.0
+info:
+  title: "相簿整理 API"
+  version: "1.0.0"
+  description: "後端負責接收照片 metadata、判定排序是否可寫入，並回傳整理後的相簿內容。"
+servers:
+  - url: "https://api.photo-album.example"
+    description: "相簿整理服務"
+tags:
+  - name: "albums"
+    description: "相簿建立與照片整理"
+paths:
+  "/albums/{albumId}/photos":
+    "post":
+      operationId: "addAlbumPhoto"
+      summary: "新增照片到相簿"
+      description: "接收照片 metadata 與排序位置。相簿不存在或排序衝突時拒絕寫入，且不改變既有順序。"
+      tags:
+        - "albums"
+      security:
+        - "albumSession": []
+      parameters:
+        - name: "albumId"
+          in: "path"
+          required: true
+          description: "要加入照片的相簿識別碼。"
+          schema:
+            type: "string"
+      requestBody:
+        required: true
+        description: "照片 metadata 與目標排序位置。"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddAlbumPhotoRequest"
+      responses:
+        "201":
+          description: "照片已加入相簿，並回傳更新後的排序。"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AlbumPhoto"
+        "409":
+          description: "排序位置已被占用，照片不會寫入。"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AlbumError"
+components:
+  securitySchemes:
+    "albumSession":
+      type: http
+      scheme: bearer
+      description: "呼叫端必須出示相簿 session token。"
+  schemas:
+    "AddAlbumPhotoRequest":
+      type: object
+      description: "新增照片時提交的 metadata。"
+      required:
+        - "fileName"
+      properties:
+        "fileName":
+          type: "string"
+          description: "原始照片檔名。"
+    "AlbumPhoto":
+      type: object
+      description: "已保存的照片與排序結果。"
+      required:
+        - "photoId"
+      properties:
+        "photoId":
+          type: "string"
+          description: "照片識別碼。"
+    "AlbumError":
+      type: object
+      description: "拒絕寫入時的錯誤原因。"
+      required:
+        - "reason"
+      properties:
+        "reason":
+          type: "string"
+          description: "可顯示給使用者的拒絕原因。"

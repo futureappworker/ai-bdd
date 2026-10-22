@@ -1,0 +1,15 @@
+{
+  "executed": true,
+  "command": [
+    "npx",
+    "cucumber-js",
+    "features/下單優惠-驗算成交金額.feature",
+    "--name",
+    "^家居幫忙達檻時食品打折勝出並送贈品且應付1575$"
+  ],
+  "cwd": "/Users/ben/Documents/app/ai-bdd",
+  "exitCode": 0,
+  "stdout": ".....\n\n1 scenario (1 passed)\n5 steps (5 passed)\n0m 0.009s (0m 0.001s executing your code)\n",
+  "stderr": "",
+  "timedOut": false
+}
