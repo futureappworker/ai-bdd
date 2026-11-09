@@ -1,0 +1,35 @@
+# language: zh-TW
+功能: {{FEATURE_TITLE}}
+
+  {{FEATURE_DESCRIPTION_LINE_1}}
+
+  {{FEATURE_DESCRIPTION_LINE_2}}
+
+  {{FEATURE_DESCRIPTION_LINE_3}}
+
+  Rule: {{HAPPY_RULE}}
+
+    場景: {{HAPPY_SCENARIO_TITLE}}
+      當 {{HAPPY_ACTION_1}}
+      而且 {{HAPPY_ACTION_2}}
+      而且 {{HAPPY_ACTION_3}}
+      而且 {{HAPPY_ACTION_4}}
+      # [Need Clarifications] {{HAPPY_CLARIFICATION}}
+      而且 {{HAPPY_ACTION_5}}
+      那麼 {{HAPPY_OBSERVATION}}
+        | {{HAPPY_RESULT_COLUMN_1}} | {{HAPPY_RESULT_COLUMN_2}} | {{HAPPY_RESULT_COLUMN_3}} |
+        | {{HAPPY_RESULT_CELL_1_1}} | {{HAPPY_RESULT_CELL_1_2}} | {{HAPPY_RESULT_CELL_1_3}} |
+      而且 {{HAPPY_OBSERVATION_2}}
+      而且 {{HAPPY_OBSERVATION_3}}
+
+  Rule: {{VARIANT_RULE}}
+
+    場景: {{VARIANT_SCENARIO_TITLE}}
+      # [Need Clarifications] {{VARIANT_CLARIFICATION}}
+      當 {{VARIANT_ACTION_1}}
+      而且 {{VARIANT_ACTION_2}}
+      而且 {{VARIANT_ACTION_3}}
+      而且 {{VARIANT_ACTION_4}}
+      而且 {{VARIANT_ACTION_5}}
+      那麼 {{VARIANT_OBSERVATION_1}}
+      而且 {{VARIANT_OBSERVATION_2}}
