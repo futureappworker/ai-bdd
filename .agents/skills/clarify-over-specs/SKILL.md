@@ -39,16 +39,17 @@ metadata:
 3. Read 當本次為套用模式且檔案存在時，讀取 `constitution/共同/憲法套用規範.md`，取得專案套用規則；檔案不存在時，專案套用規則為空。
 4. Read 當本次為套用模式且檔案存在時，讀取 `constitution/specify/spec.md`，取得 `spec.md` 的憲法 Rule；檔案不存在時，憲法 Rule 為空。
 5. Read 當本次為套用模式且檔案存在時，讀取 `constitution/specify/requirements.md`，取得 checklist 的憲法 Rule；檔案不存在時，憲法 Rule 為空。
-6. Think 當本次為套用模式時，依已載入規範決定每個回答要改的章節、假設、狀態與 checklist 項目。
-7. Think 當本次為套用模式時，依已載入規範決定本次是否停止寫入。
-8. Write 當決定停止寫入時，將拒絕原因寫入回覆。
-9. Think 當決定停止寫入時，決定本次流程停止於拒絕原因。
-10. Write 當本次為套用模式且決定寫入時，依已載入規範與已載入的憲法 Rule 將澄清答案與受影響內容寫入目標 spec.md。
-11. Write 當本次為套用模式、決定寫入，且 feature 目錄已有 `checklists/requirements.md` 時，依已載入規範與已載入的憲法 Rule 更新其中通過狀態已改變的項目。
+6. Read 當本次為套用模式且 feature 目錄已有 `checklists/requirements.md` 時，讀取該檔並取得目前勾選狀態、Notes 與任何過時未回答描述；檔案不存在時，checklist 狀態為空。
+7. Think 當本次為套用模式時，依已載入規範決定每個回答要改的章節、假設、狀態、checklist 項目與需要同步改寫的過時 Notes。
+8. Think 當本次為套用模式時，依已載入規範決定本次是否停止寫入。
+9. Write 當決定停止寫入時，將拒絕原因寫入回覆。
+10. Think 當決定停止寫入時，決定本次流程停止於拒絕原因。
+11. Write 當本次為套用模式且決定寫入時，依已載入規範與已載入的憲法 Rule 將澄清答案與受影響內容寫入目標 spec.md。
+12. Write 當本次為套用模式、決定寫入，且 feature 目錄已有 `checklists/requirements.md` 時，依已載入規範與已載入的憲法 Rule 更新其中通過狀態已改變的項目與過時 Notes。
 
 ## Phase 5: 檢查寫回結果
 
-1. Read 當本次已寫回規格時，依已載入規範與已載入的憲法 Rule 檢查目標 spec.md 與 checklist 是否仍有矛盾決策、過時假設、未處理核心缺口、未同步內容或憲法未通過項目，並列出不符合項目。
+1. Read 當本次已寫回規格時，依已載入規範與已載入的憲法 Rule 檢查目標 spec.md 與 checklist 是否仍有矛盾決策、過時假設、未處理核心缺口、未同步內容、殘留未回答描述或憲法未通過項目，並列出不符合項目。
 
 ## Phase 6: 修正寫回結果
 
